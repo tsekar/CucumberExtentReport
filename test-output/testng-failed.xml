@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" parallel="classes">
+  <test name="test">
+    <classes>
+      <class name="com.cucumber.runner.MyTestNGCukesRunner"/>
+    </classes>
+  </test> <!-- test -->
+  <test name="test1">
+    <classes>
+      <class name="com.cucumber.runner.TestNGCukesRunner"/>
+    </classes>
+  </test> <!-- test1 -->
+  <test name="test2">
+    <classes>
+      <class name="com.cucumber.runner.RunCukesTest"/>
+    </classes>
+  </test> <!-- test2 -->
+  <test name="test1(failed)" parallel="classes">
+    <classes>
+      <class name="com.cucumber.runner.MyTestNGCukesRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="teardown"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.cucumber.runner.MyTestNGCukesRunner -->
+      <class name="com.cucumber.runner.TestNGCukesRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="setup"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.cucumber.runner.TestNGCukesRunner -->
+      <class name="com.cucumber.runner.RunCukesTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.cucumber.runner.RunCukesTest -->
+    </classes>
+  </test> <!-- test1(failed) -->
+  <test name="test2(failed)" parallel="classes">
+    <classes>
+      <class name="com.cucumber.runner.MyTestNGCukesRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="teardown"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.cucumber.runner.MyTestNGCukesRunner -->
+      <class name="com.cucumber.runner.TestNGCukesRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="setup"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.cucumber.runner.TestNGCukesRunner -->
+      <class name="com.cucumber.runner.RunCukesTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0 1 2"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.cucumber.runner.RunCukesTest -->
+    </classes>
+  </test> <!-- test2(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
